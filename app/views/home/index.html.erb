@@ -1,0 +1,12 @@
+<% if current_user.nil? %>
+  <h4>ListApp</h4>
+  <p>Applikation zur Erstellung von Aufgabenlisten. Bitte loggen Sie sich ein oder erstellen Sie ein neuen Account.</p>
+<% else %>
+  <h4>Ihre Aufgabenliste:</h4>
+  <div id="task_container"></div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      window.currentView = new TasksView({el: $("#task_container")});
+    });
+  </script>
+<% end %>

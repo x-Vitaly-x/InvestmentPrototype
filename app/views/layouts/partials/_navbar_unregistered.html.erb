@@ -1,0 +1,10 @@
+<!--
+  Navbar in case the user is not yet logged in
+-->
+<ul class="navbar-nav mr-auto">
+</ul>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-inline my-2 my-lg-0"}) do |f| %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control mr-sm-2" %>
+  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control mr-sm-2" %>
+  <%= f.submit "Log in", class: "btn btn-outline-info my-2 my-sm-0" %>
+<% end %>
