@@ -1,8 +1,11 @@
 <% if current_user.nil? %>
   <h4>ListApp</h4>
-  <p>Applikation zur Erstellung von Aufgabenlisten. Bitte loggen Sie sich ein oder erstellen Sie ein neuen Account.</p>
+  <p>Application for creating and managing small tasks. Log in via the menu or<br/>
+    <a class="btn btn-sm btn-info" style="color:white" href="/users/sign_up"><span>sign up here</span></a><br/>
+    if you have no account yet.
+  </p>
 <% else %>
-  <h4>Ihre Aufgabenliste:</h4>
+  <h4>Your tasks:</h4>
   <div id="task_container"></div>
   <script type="text/javascript">
     $(document).ready(function () {
