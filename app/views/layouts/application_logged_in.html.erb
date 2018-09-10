@@ -18,18 +18,42 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <%= render partial: "layouts/partials/navbar_unregistered" %>
+    <%= render partial: "layouts/partials/navbar_registered" %>
   </div>
 </nav>
 
-<div class="container mt-4">
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-  <%= yield %>
+<div class="col-12 row">
+  <ul class="col-2 sidebar">
+    <li>
+      <a href="#">
+        Overview
+      </a>
+      <a href="#">
+        Investment Options
+      </a>
+      <a href="#">
+        Current Investments
+      </a>
+      <a href="#">
+        Deposit Withdraw
+      </a>
+      <a href="#">
+        Settings
+      </a>
+    </li>
+  </ul>
+
+  <div class="mt-4 col-10">
+    <div class="container">
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
 </div>
 
 </body>
