@@ -1,0 +1,33 @@
+.navbar {
+  a {
+    color: white;
+    &:hover {
+      background: lightblue;
+    }
+  }
+}
+
+.application {
+  .sidebar {
+    margin-top: 10px;
+    @include clearfix;
+    li {
+      list-style: none;
+      margin-top: 5px;
+      float: left;
+      width: 100%;
+      float:left;
+      a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        background: blue;
+        &:hover {
+          background: lightblue;
+        }
+      }
+    }
+  }
+}
