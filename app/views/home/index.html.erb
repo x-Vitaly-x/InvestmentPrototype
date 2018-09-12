@@ -1,15 +1,13 @@
 <% if current_user.nil? %>
-  <h4>ListApp</h4>
-  <p>Application for creating and managing small tasks. Log in via the menu or<br/>
+  <h4>Prolendo</h4>
+  <p>Application for managing investment options<br/>
     <a class="btn btn-sm btn-info" style="color:white" href="/users/sign_up"><span>sign up here</span></a><br/>
     if you have no account yet.
   </p>
 <% else %>
-  <h4>Your tasks:</h4>
-  <div id="task_container"></div>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      window.currentView = new TasksView({el: $("#task_container")});
-    });
-  </script>
+  <%= timeline [
+                   ["Washington", "1789-04-29", "1797-03-03"],
+                   ["Adams", "1797-03-03", "1801-03-03"],
+                   ["Jefferson", "1801-03-03", "1809-03-03"]
+               ] %>
 <% end %>
