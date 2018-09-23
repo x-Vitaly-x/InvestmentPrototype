@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bank_id: 1
+  title: MyString
+  risk_classification: 1
+  due_date: 2018-09-24 01:04:28
+  amount: 
+  interest_rate: 
+
+two:
+  bank_id: 1
+  title: MyString
+  risk_classification: 1
+  due_date: 2018-09-24 01:04:28
+  amount: 
+  interest_rate: 

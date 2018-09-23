@@ -1,8 +1,10 @@
 <% if current_user.nil? %>
   <h4>Prolendo</h4>
   <p>Application for managing investment options<br/>
-    <a class="btn btn-sm btn-info" style="color:white" href="/users/sign_up"><span>sign up here</span></a><br/>
-    if you have no account yet.
+    <a class="btn btn-sm btn-info" style="color:white" href="/users/sign_up?signup=banker"><span>sign up here</span></a><br/>
+    if you are a banker.<br/>
+    <a class="btn btn-sm btn-info" style="color:white" href="/users/sign_up?signup=investor"><span>sign up here</span></a><br/>
+    if you are an investor
   </p>
 <% else %>
   <%= timeline [
