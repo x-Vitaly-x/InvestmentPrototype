@@ -21,6 +21,8 @@
 //= require underscore
 //= require backbone
 //= require moment
+//= require Chart.bundle
+//= require chartkick
 
 //= require handlebars
 //= require_tree ./templates
