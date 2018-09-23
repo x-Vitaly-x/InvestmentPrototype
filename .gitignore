@@ -4,6 +4,7 @@ capybara-*.html
 /log
 .idea
 /.idea
+/.idea/*
 /.idea/*/*
 /tmp
 /db/*.sqlite3
