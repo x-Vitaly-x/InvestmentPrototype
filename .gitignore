@@ -3,8 +3,8 @@ capybara-*.html
 .rspec
 /log
 .idea
+.idea/
 /.idea
-/.idea/*
 /.idea/*/*
 /tmp
 /db/*.sqlite3
