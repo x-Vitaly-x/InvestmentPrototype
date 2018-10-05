@@ -13,7 +13,11 @@ class Api::V1::MortgagesController < ApplicationController
 
   def index
     authorize! :read, :mortgages
-    @mortgages = current_user.bank.mortgages
+    if current_user.get_role == 'banker'
+      @mortgages = current_user.bank.mortgages
+    else
+      @mortgages = Mortgage.all
+    end
     render('api/v1/mortgages/index', formats: :json)
   end
 

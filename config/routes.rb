@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   namespace :banker do
     resources :mortgages
   end
+  namespace :investor do
+    resources :investments
+    resources :mortgages
+  end
 
   namespace :api do
     namespace :v1 do

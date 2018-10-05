@@ -35,6 +35,13 @@ class Ability
       can :destroy, Mortgage do |m|
         m.bank_id == user.bank.id
       end
+
+      can :create, :mortgage_csv_upload
+    end
+
+
+    if user.get_role == 'investor'
+      can :read, :mortgages
     end
   end
 end

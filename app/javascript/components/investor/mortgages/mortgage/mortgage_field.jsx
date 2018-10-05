@@ -17,7 +17,7 @@ class MortgageField extends React.Component {
         <td>{StringHelper.toMoney(this.props.amount, '€', ',')}</td>
         <td>{StringHelper.toPercentage(this.props.interestRate, ',')}</td>
         <td>{moment(this.props.updatedAt, 'YYYY-M-D H:m').utcOffset(4).format('DD.MM.YYYY HH:mm')}</td>
-        <td><a onClick={() => this.props.deleteCall(this.props.mortgageId)} className='btn btn-danger'>Delete</a></td>
+        <td></td>
       </tr>
     )
   }

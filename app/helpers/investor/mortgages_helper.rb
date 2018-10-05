@@ -1,0 +1,2 @@
+module Investor::MortgagesHelper
+end
