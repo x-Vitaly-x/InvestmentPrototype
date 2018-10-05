@@ -3,10 +3,17 @@ Rails.application.routes.draw do
   resources :tasks, defaults: {format: :json}
   devise_for :users, controllers: {registrations: "registrations"}
 
-  get 'investment_options', to: 'home#investment_options'
-  get 'current_investments', to: 'home#current_investments'
-  get 'deposit_withdraw', to: 'home#deposit_withdraw'
-  get 'settings', to: 'home#settings'
+  get 'mortgages', to: 'home#mortgages'
 
   root to: 'home#index'
+
+  namespace :banker do
+    resources :mortgages
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :mortgages
+    end
+  end
 end

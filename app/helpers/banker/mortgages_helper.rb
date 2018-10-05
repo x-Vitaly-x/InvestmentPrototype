@@ -1,0 +1,2 @@
+module Banker::MortgagesHelper
+end

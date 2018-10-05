@@ -1,21 +1,13 @@
 class HomeController < ApplicationController
   def index
-
+    if current_user
+      if current_user.class == Users::Banker
+        redirect_to banker_mortgages_path
+      end
+    end
   end
 
-  def investment_options
-
-  end
-
-  def current_investments
-
-  end
-
-  def deposit_withdraw
-
-  end
-
-  def settings
+  def mortgages
 
   end
 end

@@ -14,37 +14,12 @@
 //= require activestorage
 //= require turbolinks
 
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
+// require jquery3
+// require popper
+// require bootstrap-sprockets
 
-//= require underscore
-//= require backbone
 //= require moment
 //= require Chart.bundle
 //= require chartkick
 
-//= require handlebars
-//= require_tree ./templates
-
-//= require tasks
-
 //= require_tree .
-
-$(function () {
-  // always pass csrf tokens on ajax calls, otherwise rails throws access control exception
-
-  $.ajaxSetup({
-    headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
-  });
-
-  // helpers needed to work with dates
-  Handlebars.registerHelper({
-    displayDate: function (date) {
-      return moment(date).format('DD.MM.YY');
-    },
-    datepickerDate: function (date) {
-      return moment(date).format('YYYY-MM-DD');
-    },
-  });
-});

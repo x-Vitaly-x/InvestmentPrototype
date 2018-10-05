@@ -2,9 +2,23 @@
   "name": "ShyftplanTest",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "ajv": "^6.5.4",
+    "axios": "^0.18.0",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap.native": "^2.0.23",
+    "eslint-plugin-node": "^7.0.1",
+    "node-sass": "^4.9.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-select": "^2.0.0",
+    "react-select-plus": "^1.0.0-rc.3.patch12",
+    "react_ujs": "^2.4.4"
   },
   "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-plugin-standard": "^4.0.0",
     "webpack-dev-server": "2.11.2"
   }
 }
