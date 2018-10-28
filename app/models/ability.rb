@@ -30,8 +30,7 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     if user.get_role == 'banker'
-      can :read, :mortgages
-      can :create, :mortgage
+      can [:read, :create], :mortgages
       can :destroy, Mortgage do |m|
         m.bank_id == user.bank.id
       end
@@ -42,6 +41,7 @@ class Ability
 
     if user.get_role == 'investor'
       can :read, :mortgages
+      can [:read, :create], :investments
     end
   end
 end

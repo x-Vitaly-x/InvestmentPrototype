@@ -1,5 +1,6 @@
 class Mortgage < ApplicationRecord
   belongs_to :bank
+  has_many :investments
 
   enum risk_classification: [
       'A', 'B', 'C'

@@ -3,7 +3,7 @@ class Api::V1::MortgagesController < ApplicationController
 
   def create
     @mortgage = current_user.bank.mortgages.new(mortgage_params)
-    authorize! :create, :mortgage
+    authorize! :create, :mortgages
     if @mortgage.save
       render('api/v1/mortgages/show', formats: :json)
     else

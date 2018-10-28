@@ -1,3 +1,4 @@
 class InvestmentCompany < ApplicationRecord
-  has_many :users_investors, :class_name => 'Users::Investor'
+  has_many :users, :class_name => 'Users::Investor'
+  has_many :investments
 end
