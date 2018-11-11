@@ -11,6 +11,12 @@ class Api::V1::MortgagesController < ApplicationController
     end
   end
 
+  def show
+    @mortgage = Mortgage.find_by_id(params[:id])
+    authorize! :show, @mortgage
+    render('api/v1/mortgages/show', formats: :json)
+  end
+
   def index
     authorize! :read, :mortgages
     if current_user.get_role == 'banker'

@@ -31,11 +31,24 @@ class Mortgages extends React.Component {
     this.setState({ investment: newInvestment });
   };
 
+  updateMortgage = (mortgageId) => {
+    return axios.get('/api/v1/mortgages/' + mortgageId)
+      .then(res => {
+        let mortgages = [
+          ...this.state.mortgages
+        ];
+        let mortgageIndex = mortgages.findIndex(el => el.id == mortgageId);
+        mortgages[ mortgageIndex ] = res.data;
+        this.setState({ mortgages });
+      });
+  };
+
   createNewInvestmentHandler = (event, newInvestment) => {
     event.preventDefault();
     return axios.post('/api/v1/investments', newInvestment)
       .then(response => {
         this.setState({ investment: null });
+        this.updateMortgage(response.data.mortgage_id);
       });
   };
 
@@ -49,9 +62,9 @@ class Mortgages extends React.Component {
               <td>Title</td>
               <td>Bank</td>
               <td>Risk</td>
-              <td>Due Date</td>
-              <td>Amount</td>
-              <td>Interest Rate</td>
+              <td>Due date</td>
+              <td>Amount available</td>
+              <td>Interest rate</td>
               <td>Updated</td>
               <td></td>
             </tr>
@@ -66,7 +79,7 @@ class Mortgages extends React.Component {
                   bankName={mortgage.bank_name}
                   riskClassification={mortgage.risk_classification}
                   dueDate={mortgage.due_date}
-                  amount={mortgage.amount}
+                  amount={mortgage.amount_available}
                   interestRate={mortgage.interest_rate}
                   updatedAt={mortgage.updated_at}
                   investCallback={this.newInvestmentHandler}

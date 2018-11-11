@@ -1,5 +1,6 @@
 class Mortgage < ApplicationRecord
   belongs_to :bank
+  belongs_to :banker, :class_name => 'Users::Banker', foreign_key: :banker_id
   has_many :investments
 
   enum risk_classification: [
@@ -8,7 +9,17 @@ class Mortgage < ApplicationRecord
 
   before_save :generate_fields
 
-  validates_presence_of :title, :risk_classification, :due_date, :amount, :interest_rate
+  validates_presence_of :title, :risk_classification,
+                        :due_date, :amount, :interest_rate,
+                        :bank_id, :banker_id
+
+  def amount_invested
+    investments.sum(:amount)
+  end
+
+  def amount_available
+    amount.to_f - amount_invested
+  end
 
   def self.import_csv(csv_file, user_id, delete_old_entries = false)
     user = Users::Banker.find(user_id)

@@ -41,6 +41,7 @@ class Ability
 
     if user.get_role == 'investor'
       can :read, :mortgages
+      can :show, Mortgage
       can [:read, :create], :investments
     end
   end

@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import InvestmentField from '../../components/Investor/Investments/InvestmentField/InvestmentField';
+
 class Investments extends React.Component {
   constructor (props) {
     super(props);
@@ -24,7 +26,29 @@ class Investments extends React.Component {
   render () {
     return (
       <div>
-        <p>xxx</p>
+        <table className='table'>
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Title</td>
+              <td>Bank Name</td>
+              <td>Amount</td>
+              <td>Interest</td>
+              <td>Risk</td>
+              <td>Due Date</td>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.investments.map(investment => {
+              return (
+                <InvestmentField
+                  key={investment.id}
+                  investment={investment}
+                />
+              )
+            })}
+          </tbody>
+        </table>
       </div>
     )
   }

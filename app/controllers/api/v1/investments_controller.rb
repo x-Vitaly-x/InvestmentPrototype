@@ -3,7 +3,7 @@ class Api::V1::InvestmentsController < ApplicationController
 
   def index
     authorize! :read, :investments
-    @investments = current_user.investment_company.investments
+    @investments = current_user.investment_company.investments.includes(mortgage: :investments)
     render('api/v1/investments/index', formats: :json)
   end
 
